@@ -1,0 +1,11 @@
+.container_footer {
+  background-color: darken($primaryColor, 15);
+  padding: 20px;
+  text-align: center;
+  ul {
+    li {
+      list-style-type: none;
+      display: inline;
+    }
+  }
+}

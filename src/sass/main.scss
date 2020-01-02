@@ -1,0 +1,187 @@
+@import "config";
+@import "navbarmenu";
+@import "footer";
+@import "about";
+
+body {
+  // @include background;
+  background: rgba($primaryColor, $backgroundOpacity);
+  color: change_color($primaryColor);
+  font-family: $fontFamily;
+}
+
+hr {
+  width: 90%;
+  border: 1px solid darken($primaryColor, 0);
+}
+
+%shared_styles {
+  border-radius: 3.5px;
+  box-shadow: 0 3.5px 8px 0 darken($primaryColor, 18);
+}
+
+.container {
+  &_tasks {
+    @extend %shared_styles;
+    @include card_hover;
+    background-color: darken($primaryColor, 1);
+    height: 350px;
+    padding: 8px;
+    margin: 30px 0;
+    text-align: justify;
+    h2 {
+      text-transform: uppercase;
+      text-align: center;
+    }
+    ul {
+      padding: 70px;
+      li {
+        list-style: none;
+        box-shadow: 0 3.5px 8px 0 rgba(0, 0, 0, 0.2);
+        background-color: lighten($primaryColor, 4);
+        display: inline;
+        border-radius: 5px;
+        padding: 50px;
+        margin: 15px;
+      }
+    }
+  }
+  &_heroimage {
+    @include background;
+    @extend %shared_styles;
+    @include card_hover;
+    height: 560px;
+    padding: 10px;
+    margin: 30px 0;
+    text-align: center;
+
+    h1 {
+      padding: 20px 0 0 0;
+      span {
+        color: $secondaryColor;
+      }
+    }
+
+    button {
+      padding: 25px;
+      background: inherit;
+      width: 200px;
+      margin: 220px 0;
+      border: $secondaryColor 2.5px solid;
+      border-radius: 10px;
+      color: white;
+      font-size: 20px;
+
+      &:hover {
+        @include easeOut;
+        background: $secondaryColor;
+      }
+    }
+  }
+  &_table {
+    @include card_hover;
+    @extend %shared_styles;
+    background-color: darken($primaryColor, 1);
+    height: 320px;
+    padding: 20px;
+    margin: 30px 0;
+    text-align: justify;
+
+    h2 {
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+
+      tr {
+        td {
+          border: #fff 1px solid;
+          text-align: center;
+          padding: 15px;
+        }
+        th {
+          border: #fff 1px solid;
+          text-align: center;
+          padding: 12px;
+        }
+        &:nth-child(even) {
+          background-color: lighten($primaryColor, 10);
+        }
+      }
+    }
+  }
+  &_media {
+    @extend %shared_styles;
+    @include card_hover;
+    ul li {
+      list-style: none;
+      display: inline;
+    }
+
+    h2 {
+      padding: 20px 0;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    div {
+      display: inline-flex;
+      background-color: darken($primaryColor, 1);
+      border-radius: 4.5px;
+      width: 88%;
+      margin: 50px;
+      video {
+        //margin:50px 350px;
+        width: 100%;
+        height: auto;
+      }
+      audio {
+        margin: 50px 400px;
+      }
+    }
+  }
+  &_form {
+    @include card_hover;
+    @extend %shared_styles;
+    background-color: darken($primaryColor, 2);
+    padding: 20px;
+    display: block;
+    margin: 20px 0;
+
+    h2 {
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    form {
+      padding: 0 50px;
+      input {
+        width: 100%;
+        padding: 14px 20px;
+        margin: 30px 0;
+        display: block;
+        border: 1px solid rgb(189, 185, 185);
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 10px;
+        background: rgb(0, 136, 247);
+        margin: 10px 40%;
+        width: 200px;
+        border-radius: 5px;
+        border: rgb(0, 136, 247) 2.5px solid;
+        color: #fff;
+        font-size: 15px;
+
+        &:hover {
+          @include easeOut;
+          background: inherit;
+          border: rgb(0, 136, 247) 2.5px solid;
+        }
+      }
+    }
+  }
+}
